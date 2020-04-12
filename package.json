@@ -1,0 +1,93 @@
+{
+  "name": "gomart",
+  "description": "A all-in starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "GoMart"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meight10/GoMart"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "lint:scripts": "eslint ./ --max-warnings=0",
+    "fix:scripts": "eslint ./ --fix --max-warnings=0",
+    "lint:styles": "stylelint \"./src/**/*.scss\" --syntax=scss",
+    "fix:styles": "stylelint \"./src/**/*.scss\" --fix --syntax=scss",
+    "clean:install": "rimraf node_modules && rimraf package-lock.json && npm i"
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:scripts",
+      "git add"
+    ],
+    "*.(css|scss)": [
+      "npm run lint:styles",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "antd": "^3.26.15",
+    "bourbon": "^6.0.0",
+    "classnames": "^2.2.6",
+    "gatsby": "^2.20.18",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "tailwindcss": "^1.2.0",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@svgr/webpack": "^4.3.3",
+    "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-less": "^2.1.2",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-playground": "^1.0.6",
+    "gatsby-plugin-postcss": "^2.2.1",
+    "gatsby-plugin-react-helmet": "^3.2.2",
+    "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-plugin-svgr": "^2.0.2",
+    "husky": "^3.1.0",
+    "less": "^3.11.1",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "rimraf": "^2.7.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.3.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.16.1"
+  }
+}
