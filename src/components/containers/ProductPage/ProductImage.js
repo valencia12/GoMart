@@ -77,7 +77,7 @@ class ProductImage extends Component {
   }
 
   render() {
-    console.log(this.props.image, 'CONNNNNY')
+    
     const {
       image: { img },
       onClick,
