@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path')
 require('dotenv').config({
@@ -8,12 +9,22 @@ require('dotenv').config({
 })
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://localhost:8000',
+    title: 'GoMart tu mejor opción',
+    description:
+      'Consigue los mejores productos, todos los que necesitas de una forma confiable, todo esto mientras estás ayudando a otros en este tiempo de crisis'
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-playground',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-stripe',
     {
       resolve: 'gatsby-plugin-less',
       options: {
@@ -64,5 +75,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-source-stripe',
+      options: {
+        objects: ['Sku'],
+        secretKey: process.env.STRIPE_SK
+      }
+    }
   ],
 }
