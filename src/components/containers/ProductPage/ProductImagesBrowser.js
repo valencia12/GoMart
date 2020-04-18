@@ -309,9 +309,9 @@ class ProductImagesBrowser extends Component {
           >
             <img src={image} alt="product-img"/>
           </ImageBox>
-          {altText && (
-            <CommunityCaption caption={altText} superZoom={superZoom} />
-          )}
+          
+            <CommunityCaption caption={"altText"} superZoom={superZoom} />
+          
         </ZoomArea>
         <ZoomHelper>{superZoom ? <MdZoomOut /> : <MdZoomIn />}</ZoomHelper>
       </ProductImagesBrowserRoot>
