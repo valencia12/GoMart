@@ -64,7 +64,7 @@ class ProductThumbnails extends Component {
               {images.map((image, idx) => {
                 const {
                   img
-                  },
+                  
                 } = image
 
                 return (
