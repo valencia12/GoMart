@@ -279,12 +279,7 @@ class ProductImagesBrowser extends Component {
     const { images, position, imageFeatured, toggle } = this.props;
     const image = imageFeatured ? imageFeatured : images[0];
 
-    const {
-      altText,
-      localFile: {
-        childImageSharp: { fluid }
-      }
-    } = image;
+    
 
     const { imageBoxHeight, superZoom } = this.state;
 
@@ -305,14 +300,14 @@ class ProductImagesBrowser extends Component {
         >
           <ImageBox
             onClick={this.toggleZoomRatio}
-            href={fluid.src}
+            href={image}
             superZoom={superZoom}
             width={imageBoxHeight}
             ref={image => {
               this.imageBox = image;
             }}
           >
-            <Image fluid={fluid} />
+            <img src={image} />
           </ImageBox>
           {altText && (
             <CommunityCaption caption={altText} superZoom={superZoom} />
