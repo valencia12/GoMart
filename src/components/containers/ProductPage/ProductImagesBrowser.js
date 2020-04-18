@@ -280,7 +280,7 @@ class ProductImagesBrowser extends Component {
     const image = imageFeatured ? imageFeatured : images[0];
 
     
-
+    altText = "img-product"
     const { imageBoxHeight, superZoom } = this.state;
 
     return (
