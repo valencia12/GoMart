@@ -42,7 +42,13 @@ const Intro = styled(`p`)`
 const ItemListingHeader = () => (
   <ItemListingHeaderRoot>
     <Title>Consigue lo mejor de GoMart</Title>
-    <Intro>Introducción paloma</Intro>
+    <Intro>
+      Son tiempos difíciles, es cuando más tenemos que mostrar nuestra solidaridad. Los productos 
+      en GoMart son de negocios de la pequeña y mediana empresa así que puedes comprar lo que 
+      necesites a la vez que impulsas la economía de El Salvador. Ocupa nuestro sistema de donaciones,
+      todo lo que compres se le llevará a personas de escasos recursos que necesitan de tu ayuda, en especial
+      en esta situación.
+    </Intro>
   </ItemListingHeaderRoot>
 )
 
