@@ -307,7 +307,7 @@ class ProductImagesBrowser extends Component {
               this.imageBox = image;
             }}
           >
-            <img src={image} />
+            <img src={image} alt="product-img"/>
           </ImageBox>
           {altText && (
             <CommunityCaption caption={altText} superZoom={superZoom} />
