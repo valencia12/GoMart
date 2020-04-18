@@ -23,7 +23,7 @@ const Thumbnails = styled(ProductThumbnails)`
 
 const ProductImagesDesktop = ({ images, imageFeatured, imageOnClick }) => {
   const image = images[0]
-
+  console.log(images, "AYUDA")
   return (
     <ProductImagesDesktopRoot>
       <ProductImage image={imageFeatured || image} onClick={imageOnClick} />

@@ -54,26 +54,26 @@ class ProductThumbnails extends Component {
   }
 
   render() {
-    const { images, className = '' } = this.props
-
+    const { className = '' } = this.props
+    const imagesArray = []
+    
+    imagesArray.push(this.props.images[0].img)
+    console.log(imagesArray, "AYUDA236")
     return (
       <InterfaceContext.Consumer>
         {({ featureProductImage }) => (
           <ProductThumbnailsRoot className={className}>
             <ProductThumbnailsContent>
-              {images.map((image, idx) => {
-                const {
-                  img
-                  
-                } = image
+              {imagesArray.map((image, idx) => {
+                console.log(image, "IMAGENMAP")
 
                 return (
                   <Thumbnail
-                    key={id}
-                    onClick={this.handleClick(image, featureProductImage)}
-                    href={img}
+                    key={image}
+                    
+                    href={image}
                   >
-                    <img src={img} alt="producto_img"/>
+                    <img src={image} alt="producto_img"/>
                   </Thumbnail>
                 )
               })}
