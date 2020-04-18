@@ -30,12 +30,6 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -45,6 +39,8 @@
     "gatsby": "^2.20.18",
     "gatsby-image": "^2.3.2",
     "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-layout": "^1.2.3",
+    "gatsby-plugin-remote-images": "^2.1.0",
     "gatsby-plugin-sharp": "^2.5.4",
     "gatsby-plugin-stripe": "^1.2.4",
     "gatsby-source-stripe": "^3.0.7",
@@ -60,6 +56,7 @@
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "shopify-buy": "^2.9.3",
     "tailwindcss": "^1.2.0",
     "yup": "^0.27.0"
   },

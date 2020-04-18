@@ -10,7 +10,7 @@ import {
   colors,
   radius,
   spacing
-} from '../../utils/styles';
+} from '../../../utils/styles';
 
 const CommunityCaptionRoot = styled(`div`)`
   bottom: ${spacing.xl}px;

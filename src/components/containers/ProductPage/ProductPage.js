@@ -59,6 +59,51 @@ class ProductPage extends Component {
 
     const images = [{ img }]
 
+    const variants = [
+      {
+        shopifyId: 1,
+        title: "SM",
+        price: "2.50",
+        availableForSale: "true"
+        
+      },
+      {
+        shopifyId: 2,
+        title: "MD",
+        price: "90.50",
+        availableForSale: "false"
+        
+      },
+      {
+        shopifyId: 3,
+        title: "LG",
+        price: "32.50",
+        availableForSale: "true"
+        
+      },
+      {
+        shopifyId: 4,
+        title: "XL",
+        price: "22.50",
+        availableForSale: "true"
+        
+      },
+      {
+        shopifyId: 5,
+        title: "XXL",
+        price: "10.50",
+        availableForSale: "true"
+        
+      },
+      {
+        shopifyId: 6,
+        title: "3XL",
+        price: "12.50",
+        availableForSale: "false"
+        
+      }
+    ]
+
     console.log(images, 'IMAGEEEEEEES')
 
     const {
@@ -85,7 +130,7 @@ class ProductPage extends Component {
           <Details>
             <BackLink>Back to Product List</BackLink>
             <ProductSpecs product={product} />
-            <ProductForm id={id} />
+            <ProductForm id={id} variants={variants}/>
           </Details>
         </Container>
       </ProductPageRoot>

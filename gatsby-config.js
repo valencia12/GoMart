@@ -26,6 +26,12 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-stripe',
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/containers/Layout/`)
+      }
+    },
+    {
       resolve: 'gatsby-plugin-less',
       options: {
         javascriptEnabled: true,
@@ -81,6 +87,13 @@ module.exports = {
         objects: ['Sku'],
         secretKey: process.env.STRIPE_SK
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'allStripeSku',
+        imagePath: 'image',
+      },
+    },
   ],
 }

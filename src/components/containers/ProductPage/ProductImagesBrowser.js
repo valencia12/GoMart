@@ -10,8 +10,8 @@ import ProductThumbnails, {
   ProductThumbnailsContent,
   Thumbnail
 } from './ProductThumbnails';
-import { Button } from '../shared/Buttons';
-import { debounce } from '../../utils/helpers';
+import { Button } from '../../common/shared/Buttons';
+import { debounce } from '../../../utils/helpers';
 
 import {
   breakpoints,
@@ -19,7 +19,7 @@ import {
   radius,
   spacing,
   dimensions
-} from '../../utils/styles';
+} from '../../../utils/styles';
 
 const IMAGE_CHANGE_ANIM_DURATION = 250;
 
