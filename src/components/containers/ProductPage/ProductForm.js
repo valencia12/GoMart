@@ -223,7 +223,7 @@ class ProductForm extends Component {
                   onChange={this.handleChange}
                 >
                   <option disabled value="">
-                    Choose Size
+                    Elegir talla
                   </option>
                   {variants.map(variant => (
                     <option
@@ -247,11 +247,11 @@ class ProductForm extends Component {
             </AddToCartButton>
             <InfoLinks>
               <Link to="/product-details?fromProduct#materials-fit">
-                <span>Materials &amp; Fit</span>
+                <span>Términos &amp; Condiciones</span>
               </Link>
               &nbsp; • &nbsp;
               <Link to="/product-details?fromProduct#care-instructions">
-                <span>Care instructions</span>
+                <span>Instrucciones</span>
               </Link>
             </InfoLinks>
           </Form>
