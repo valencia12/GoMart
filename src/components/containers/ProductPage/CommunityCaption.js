@@ -150,11 +150,7 @@ class CommunityCaption extends Component {
           <span>We want to see your Gatsby swag photos!</span>{' '}
           <strong>Read more...</strong>
           <span>
-            Upload your photos to{' '}
-            <a href="https://github.com/gatsbyjs/store.gatsbyjs.org/issues/143">
-              the official photo sharing issue
-            </a>{' '}
-            and it may be featured in the store!
+            
           </span>
         </UserPhotoHint>
         <Toggle onClick={this.toggle}>
