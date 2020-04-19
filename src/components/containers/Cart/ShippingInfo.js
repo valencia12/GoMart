@@ -84,22 +84,17 @@ class ShippingInfo extends Component {
       <ShippingInfoRoot className={detailsVisible ? 'expanded' : ''}>
         <Intro role="button" onClick={this.toggle}>
           <InfoIcon />
-          International shipments can take <strong>6 weeks or more</strong> to
-          be delivered and may be subject to{' '}
-          <a
-            href="https://github.com/gatsbyjs/store.gatsbyjs.org#frequently-asked-questions"
-            target="blank"
-            rel="nofollow"
-          >
-            local taxes and duties
-          </a>
+          Recuerda que también puedes realizar donaciones a nuestro servicio
+          delivery, con esto estarás ayudando a que las donaciones de productos
+          puedan llegar a más personas.
           . <ArrowIcon />
         </Intro>
         <Details>
-          Tracking updates may not always show up in real time on your tracking
-          link. If you still have not received your order at the end of 6 weeks,
-          please let us know by sending an email to{' '}
-          <a href="mailto:team@gatsbyjs.com">team@gatsbyjs.com</a>
+          Proporcionamos las donaciones de productos a las personas que estén
+          cerca del negocio que tenga esos productos, pero hay personas que quedan
+          muy lejos y no tienen los medios para poder llegar a uno de estos 
+          establecimientos, por lo que con tu ayuda pagamos un servicio de delivery para 
+          llegar a ellos.
         </Details>
       </ShippingInfoRoot>
     );

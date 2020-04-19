@@ -26,6 +26,8 @@ import {
   dimensions
 } from '../../../utils/styles';
 
+import priceFormat from '../../../utils/priceFormat'
+
 const CartRoot = styled(`div`)`
   background: ${colors.lightest};
   bottom: 0;
@@ -324,10 +326,12 @@ class Cart extends Component {
       <StoreContext.Consumer>
         {({ client, checkout, removeLineItem, updateLineItem, adding }) => {
           const setCartLoading = bool => this.setState({ isLoading: bool });
+
           console.log(checkout, "CHECKOUUUUUUUUUUUUUUUUUUT")
+          
           const handleRemove = itemID => async event => {
             event.preventDefault();
-            await removeLineItem(client, checkout.id, itemID);
+            removeLineItem(client, checkout.id, itemID);
             setCartLoading(false);
           };
 
@@ -343,6 +347,20 @@ class Cart extends Component {
             (total, item) => total + item.quantity,
             0
           );
+          let subtotal = ''
+          subtotal = checkout.lineItems.map( item =>{
+            return priceFormat(item.price) * item.quantity
+          })
+          if(subtotal != ''){
+            subtotal = subtotal.reduce((total, totalProduct) => {
+              return total + totalProduct
+            })
+          }
+          const total  = subtotal
+          /* const total = subtotal.reduce((total, totalProduct) => {
+            return total + totalProduct
+          }) */
+          console.log(total, "ItemsInCart")
 
           const showFreeBonus = !checkout.lineItems.some(
             ({ id }) => id === gatsbyStickerPackID
@@ -392,26 +410,26 @@ class Cart extends Component {
                   <Costs>
                     <Cost>
                       <span>Subtotal:</span>{' '}
-                      <strong>USD ${checkout.subtotalPrice}</strong>
+                      <strong>USD ${total}</strong>
                     </Cost>
                     <Cost>
-                      <span>Taxes:</span> <strong>{checkout.totalTax}</strong>
+                      <span>Impuestos:</span> <strong>0.00</strong>
                     </Cost>
                     <Cost>
-                      <span>Shipping (worldwide):</span> <strong>FREE</strong>
+                      <span>Delivery:</span> <strong>FREE</strong>
                     </Cost>
                     <Total>
-                      <span>Total Price:</span>
-                      <strong>USD ${checkout.totalPrice}</strong>
+                      <span>Total:</span>
+                      <strong>USD ${total}</strong>
                     </Total>
                   </Costs>
 
                   <CheckOut href={checkout.webUrl}>
-                    Check out <MdArrowForward />
+                    Donar <MdArrowForward />
                   </CheckOut>
                   <BackLink onClick={toggle}>
                     <MdArrowBack />
-                    Back to shopping
+                    Sigue donando
                   </BackLink>
 
                   {showFreeBonus && <FreeBonus />}

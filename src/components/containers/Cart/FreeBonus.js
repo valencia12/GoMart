@@ -37,11 +37,11 @@ const FreeBonus = () => (
   <FreeBonusRoot>
     <p>
       <SmileIcon />
-      We will add the <strong>Gatsby Sticker Pack</strong> as a FREE bonus to
-      your order!
+      Recuerda que al completar 3 donaciones tienes un cupón de descuentos
+      en tu próxima completar
     </p>
 
-    <img src={gift} alt="Gift Icon" />
+    
   </FreeBonusRoot>
 );
 

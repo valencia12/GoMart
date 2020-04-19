@@ -107,7 +107,10 @@ class ProductForm extends Component {
   state = {
     variant:
       this.props.variants.length === 1 ? this.props.variants[0].shopifyId : '',
+    variantTitle:
+      this.props.variants.length === 1 ? this.props.variants[0].shopifyId : '',
     quantity: 1,
+    product: this.props.product,
     errors: []
   };
 
@@ -143,7 +146,7 @@ class ProductForm extends Component {
       });
     }
 
-    if (this.state.variant === '' || this.state.variant === '.') {
+    if (this.state.variantTitle === '' || this.state.variantTitle === '.') {
       errors.push({
         field: 'variant',
         msg: 'Please select a <b>size</b>.'
@@ -155,7 +158,10 @@ class ProductForm extends Component {
       return;
     }
 
-    callback(this.state.variant, this.state.quantity);
+    this.state.product.variant = this.state.variantTitle
+
+    console.log(this.state.variant, "VARIANTE")
+    callback(this.state.product, this.state.quantity);
   };
 
   render() {
@@ -212,8 +218,8 @@ class ProductForm extends Component {
                 </Label>
                 <Select
                   id="variant"
-                  value={this.state.variant}
-                  name="variant"
+                  value={this.state.variantTitle}
+                  name="variantTitle"
                   onChange={this.handleChange}
                 >
                   <option disabled value="">
@@ -236,7 +242,7 @@ class ProductForm extends Component {
               disabled={isOutOfStock}
               fullWidth={hasVariants}
             >
-              {isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
+              {isOutOfStock ? 'No hay disponible' : 'Añadir al carrito'}
               {isOutOfStock ? <MdSentimentDissatisfied /> : <MdShoppingCart />}
             </AddToCartButton>
             <InfoLinks>

@@ -111,8 +111,8 @@ export default class Layout extends React.Component {
     
     store: {
       ...defaultStoreContext,
-      addVariantToCart: (variantId, quantity) => {
-        if (variantId === '' || !quantity) {
+      addVariantToCart: (product, quantity) => {
+        if (product.variant === '' || !quantity) {
           console.error('Both a size and quantity are required.');
           return;
         }
@@ -124,51 +124,29 @@ export default class Layout extends React.Component {
           }
         }));
 
-        const { checkout, client } = this.state.store;
-        const checkoutId = checkout.id;
-        const lineItemsToUpdate = [
-          { variantId, quantity: parseInt(quantity, 10) }
-        ];
-
-        return client.checkout
-          .addLineItems(checkoutId, lineItemsToUpdate)
-          .then(checkout => {
-            this.setState(state => ({
-              store: {
-                ...state.store,
-                checkout,
-                adding: false
-              }
-            }));
-          });
+        console.log(product, "PRODUCTO A CARRITO")
+        product.quantity = parseInt(quantity)
+        this.state.store.checkout.lineItems.push(product)
+        this.setState(state => ({
+          store: {
+            ...state.store,
+            adding: false
+          }
+        }));
+          
       },
       removeLineItem: (client, checkoutID, lineItemID) => {
-        return client.checkout
-          .removeLineItems(checkoutID, [lineItemID])
-          .then(res => {
-            this.setState(state => ({
-              store: {
-                ...state.store,
-                checkout: res
-              }
-            }));
-          });
+        console.log(lineItemID, "SKU")
+        this.state.store.checkout.lineItems = this.state.store.checkout.lineItems.filter((value, index) => {
+          return value.id != lineItemID
+        })
       },
       updateLineItem: (client, checkoutID, lineItemID, quantity) => {
-        const lineItemsToUpdate = [
-          { id: lineItemID, quantity: parseInt(quantity, 10) }
-        ];
-
-        return client.checkout
-          .updateLineItems(checkoutID, lineItemsToUpdate)
-          .then(res => {
-            this.setState(state => ({
-              store: {
-                ...state.store,
-                checkout: res
-              }
-            }));
-          });
+        
+        let indexElement = this.state.store.checkout.lineItems.findIndex(
+          obj => obj.id === lineItemID
+        )
+        this.state.store.checkout.lineItems[indexElement].quantity = quantity
       }
     }
   };

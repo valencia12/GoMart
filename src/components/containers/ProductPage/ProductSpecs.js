@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 
 import { breakpoints, colors, fonts, spacing } from '../../../utils/styles'
 
+import priceFormat from '../../../utils/priceFormat'
+
 const ProductSpecsRoot = styled(`div`)`
   padding: 0 ${spacing.md}px;
 
@@ -55,7 +57,7 @@ const ProductSpecs = props => {
       <Name>{name}</Name>
       <Description>{removeCareInstructions(description)}</Description>
       <Price>
-        <span>USD</span> ${price}
+        <span>USD</span> ${priceFormat(price)}
       </Price>
     </ProductSpecsRoot>
   )

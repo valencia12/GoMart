@@ -7,6 +7,7 @@ import { Link } from 'gatsby'
 
 import { MdShoppingCart, MdArrowForward } from 'react-icons/md'
 
+import priceFormat from '../../../utils/priceFormat'
 
 import {
   removeCareInstructions,
@@ -188,6 +189,7 @@ const Item = props => {
 
   console.log(price, "product")
   
+  
 
   return (
     <ItemLink to={`/product/${id}`} aria-label={name}>
@@ -204,7 +206,7 @@ const Item = props => {
         </Description>
         <PriceRow>
           <Price>
-            <span>USD</span> ${price}
+            <span>USD</span> ${priceFormat(price)}
           </Price>
           <Incentive>
             <span>

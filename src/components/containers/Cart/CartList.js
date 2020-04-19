@@ -39,9 +39,9 @@ const CartList = ({
 }) => (
     <>
       <Headers>
-        <span>Product</span>
-        <span>Qty.</span>
-        <span>Remove</span>
+        <span>Producto</span>
+        <span>Cant</span>
+        <span>Eliminar</span>
       </Headers>
       <CartListRoot>
         {items.map(item => (

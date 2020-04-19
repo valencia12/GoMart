@@ -128,9 +128,9 @@ class ProductPage extends Component {
             />
           )}
           <Details>
-            <BackLink>Back to Product List</BackLink>
+            <BackLink>Regresar</BackLink>
             <ProductSpecs product={product} />
-            <ProductForm id={id} variants={variants}/>
+            <ProductForm id={id} variants={variants} product={product}/>
           </Details>
         </Container>
       </ProductPageRoot>

@@ -9,6 +9,8 @@ import { Button } from '../../common/shared/Buttons';
 
 import { breakpoints, colors, spacing } from '../../../utils/styles';
 
+import priceFormat from '../../../utils/priceFormat';
+
 const CartListItemRoot = styled('li')`
   align-items: center;
   border-bottom: 1px solid ${colors.brandLight};
@@ -125,14 +127,14 @@ export default ({
   return (
     <CartListItemRoot>
       <Thumbnail
-        id={item.variant.image.id}
-        fallback={item.variant.image.src}
-        alt={item.variant.image.altText}
+        id={item.product.metadata.img}
+        fallback={item.product.metadata.img}
+        alt={item.product.name}
       />
       <Info>
-        <Name>{item.title}</Name>
+        <Name>{item.product.name}</Name>
         <Meta>
-          {item.variant.title}, ${item.variant.price}
+          {item.product.name}, ${priceFormat(item.price)}
         </Meta>
       </Info>
       <Quantity
